@@ -41,6 +41,4 @@
 *.dwo
 
 # User Specific Files
-project.json.user
-qmake.pro.user
-CMakeLists.txt.user
+*.user

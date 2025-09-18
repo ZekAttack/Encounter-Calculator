@@ -23,7 +23,6 @@ public:
     void updateRateLabel(QAbstractButton *button);
 
 private slots:
-    void on_radioButton_clicked();
     void on_counterReset_clicked();
 
 private:

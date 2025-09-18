@@ -2,7 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QAbstractButton>
 #include <QKeyEvent>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -14,19 +16,19 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
+
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void updateRateLabel(QAbstractButton *button);
 
 private slots:
     void on_radioButton_clicked();
-
-    void on_radioButtons_clicked();
-
-    void on_pushButton_clicked();
+    void on_counterReset_clicked();
 
 private:
     Ui::MainWindow *ui;
+    void counterChange (QKeyEvent *event);
     void keyPressEvent (QKeyEvent *event);
 };
 #endif // MAINWINDOW_H

@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QAbstractButton>
 #include <QKeyEvent>
+#include <cmath>
+
 
 
 QT_BEGIN_NAMESPACE
@@ -21,13 +23,17 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void updateRateLabel(QAbstractButton *button);
+    void updateCounterLabel(QAbstractButton *button);
 
 private slots:
     void on_counterReset_clicked();
 
+
+
 private:
     Ui::MainWindow *ui;
-    void counterChange (QKeyEvent *event);
+    void updateResultEncounter();
+    void updateResultRate();
     void keyPressEvent (QKeyEvent *event);
 };
 #endif // MAINWINDOW_H

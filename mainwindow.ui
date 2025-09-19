@@ -17,8 +17,8 @@
    <widget class="QLabel" name="rateLabel">
     <property name="geometry">
      <rect>
-      <x>90</x>
-      <y>150</y>
+      <x>100</x>
+      <y>140</y>
       <width>161</width>
       <height>91</height>
      </rect>
@@ -40,7 +40,7 @@
     <property name="geometry">
      <rect>
       <x>420</x>
-      <y>200</y>
+      <y>160</y>
       <width>151</width>
       <height>61</height>
      </rect>
@@ -330,7 +330,7 @@
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>320</y>
+      <y>250</y>
       <width>84</width>
       <height>23</height>
      </rect>
@@ -339,30 +339,129 @@
      <string>Reset</string>
     </property>
    </widget>
-   <widget class="QTextEdit" name="counterEdit">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>370</y>
-      <width>104</width>
-      <height>31</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QPushButton" name="counter1000">
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>350</y>
-      <width>81</width>
+      <y>310</y>
+      <width>84</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1000</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">counterIncrease</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="counter100">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>340</y>
+      <width>84</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>100</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">counterIncrease</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="counter10">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>370</y>
+      <width>84</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>10</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">counterIncrease</string>
+    </attribute>
+   </widget>
+   <widget class="QPushButton" name="counter1">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>400</y>
+      <width>84</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>1</string>
+    </property>
+    <attribute name="buttonGroup">
+     <string notr="true">counterIncrease</string>
+    </attribute>
+   </widget>
+   <widget class="QLabel" name="counterDesc">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>290</y>
+      <width>101</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Set Counter</string>
+     <string>Increase Counter</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="resultEncounter">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>80</y>
+      <width>261</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
     </property>
     <property name="alignment">
-     <set>Qt::AlignmentFlag::AlignCenter</set>
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="resultRate">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>320</y>
+      <width>261</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>
@@ -375,12 +474,6 @@
      <height>20</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuEncounter_Calculator">
-    <property name="title">
-     <string>Encounter Calculator</string>
-    </property>
-   </widget>
-   <addaction name="menuEncounter_Calculator"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
@@ -388,5 +481,6 @@
  <connections/>
  <buttongroups>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="counterIncrease"/>
  </buttongroups>
 </ui>

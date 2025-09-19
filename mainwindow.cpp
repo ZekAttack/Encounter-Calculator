@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     QObject::connect(ui->buttonGroup, &QButtonGroup::buttonClicked, this, &MainWindow::updateRateLabel);
     QObject::connect(ui->counterIncrease, &QButtonGroup::buttonClicked, this, &MainWindow::updateCounterLabel);
+    this->setWindowTitle("Encounter Calculator");
 }
 
 MainWindow::~MainWindow()

@@ -10,6 +10,8 @@ MainWindow::MainWindow(QWidget *parent)
     QObject::connect(ui->buttonGroup, &QButtonGroup::buttonClicked, this, &MainWindow::updateRateLabel);
     QObject::connect(ui->counterIncrease, &QButtonGroup::buttonClicked, this, &MainWindow::updateCounterLabel);
     this->setWindowTitle("Encounter Calculator");
+    updateResultEncounter();
+    updateResultRate();
 }
 
 MainWindow::~MainWindow()
@@ -20,6 +22,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_counterReset_clicked()
 {
     ui->counterLabel->setText("0");
+    updateResultEncounter();
 }
 
 
@@ -60,7 +63,7 @@ void MainWindow::updateResultEncounter()
     double probOccur = (1 - std::pow((1-rate), ui->counterLabel->text().toInt())) * 100;
     QString insertNum;
     insertNum.setNum(probOccur);
-    ui->resultEncounter->setText("At " + ui->counterLabel->text() + " encounters, you have a " + insertNum + "% chance of occuring.");
+    ui->resultEncounter->setText("At " + ui->counterLabel->text() + " encounter(s), you have a " + insertNum + "% chance of occuring.");
 }
 
 void MainWindow::updateResultRate()
@@ -78,8 +81,8 @@ void MainWindow::updateResultRate()
     insertNum3.setNum(enc75);
     insertNum4.setNum(enc99);
     ui->resultRate->setText("At a rate of " + ui->rateLabel->text() +
-                            ", it will take " + insertNum + " encounters for a 25% chance, "
-                            + insertNum2 + " encounters for a 50% chance, "
-                            + insertNum3 + " encounters for a 75% chance and "
-                            + insertNum4 + " encounters for a 99% chance.");
+                            ", it will take " + insertNum + " encounter(s) for a 25% chance, "
+                            + insertNum2 + " encounter(s) for a 50% chance, "
+                            + insertNum3 + " encounter(s) for a 75% chance and "
+                            + insertNum4 + " encounter(s) for a 99% chance.");
 }
